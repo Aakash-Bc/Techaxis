@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baker Fresh</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montaga&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montaga&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: "Montaga", serif;
+        }
+
+        :root {
+            --home-bg: url("https://wallpapercave.com/wp/wp13388462.jpg");
+        }
+
+        .home {
+            background-image: var(--home-bg);
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            max-width: 100%;
+            min-height: 100vh;
+        }
+
+        /* .home img::before{
+        content: "";
+        position: absolute;
+        animation: bgloader 1s ease;
+        animation-delay: 0.4s;
+        inset: 0;
+        z-index: 0;
+      } */
+
+        /* .home > * {
+        position: relative;
+        z-index: 1;
+      } */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 80px;
+            z-index: 1000;
+            background-color: transparent;
+            position: sticky;
+            top: 0;
+            gap: 20px;
+        }
+
+        .nav-items {
+            color: #ffff;
+            display: flex;
+            gap: 60px;
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hero {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .hero img {
+            animation: iconloader 1s ease;
+            animation-delay: 0.4s;
+        }
+
+        .hero P {
+            color: #ffff;
+            font-size: 82px;
+            width: 700px;
+            text-align: center;
+            animation: textloader 1s ease;
+            animation-delay: 0.5s;
+        }
+
+        .hero-btn {
+            width: fit-content;
+            font-size: 20px;
+            font-weight: 700;
+            background-color: rgb(188, 129, 87);
+            color: #ffff;
+            font-family: "Inter", sans-serif;
+            padding: 25px 50px;
+            border: none;
+            animation: buttonloader 1s ease;
+            animation-delay: 0.6s;
+            border-radius: 12px;
+            margin-bottom: 21px;
+        }
+
+        .hero-btn:hover {
+            background-color: black;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .text-abv-hot-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin: 90px;
+        }
+
+        h2 {
+            font-size: 46px;
+        }
+
+        @keyframes textloader {
+            from {
+                opacity: 0;
+                transform: translateY(300px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes iconloader {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes buttonloader {
+            from {
+                transform: translateY(100px);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* @keyframes bgloader {
+        from {
+          transform: translateY(100px);
+        }
+        to {
+          transform: translateY(0);
+        }
+      } */
+
+        .hot-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            margin: 20px 100px 100px 100px;
+            gap: 20px;
+        }
+
+        .hot-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid #d3cdc8;
+            padding: 20px 30px;
+            width: 300px;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                0 6px 20px rgba(0, 0, 0, 0.19);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hot-items:hover {
+            transform: scale(1.1);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+
+        .hot-items img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .hot-items h3 {
+            font-size: 22px
+        }
+
+        .hot-items .sa {
+            font-size: 32px;
+        }
+
+        .hot-items .sb {
+            font-size: 50px;
+            color: #bc8157;
+        }
+
+        .conact-us {
+            background-image: url("./Images/contactwithus/cu-bg1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 100px;
+
+        }
+
+        .cu-lhs {
+            background-color: #2f1e12;
+            color: #ffff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            height: 300px;
+            width: 400px;
+        }
+
+        .cu-lhs span {
+            font-size: 36px;
+            font-weight: normal
+        }
+
+        .cu-lhs li {
+            font-size: 16px
+        }
+
+        .cu-rhs {
+            background-image: url("./Images/contactwithus/learnmore.svg");
+            background-repeat: no-repeat;
+            background-size: 190px 190px;
+            width: 300px;
+            height: 300px;
+            background-position: center;
+            animation: rotate 16s linear infinite;
+
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .partners {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 100px;
+            gap: 20px;
+        }
+
+        .partners img {
+            height: 100px;
+            width: 100px;
+            transition: transform 0.5s ease;
+        }
+
+        .partners img:hover {
+            transform: scale(1.1);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            filter: brightness(60%);
+            transition: transform 0.4s ease;
+        }
+
+        .image-container img:hover {
+            transform: translateY(8px);
+        }
+
+        .overlay-text {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .s01 {
+            position: absolute;
+            left: 90%;
+            top: 10%;
+        }
+
+        .s02 {
+            position: absolute;
+            left: 5%;
+            top: 65%;
+        }
+
+        .s03 {
+            position: absolute;
+            left: 5%;
+            top: 85%;
+            text-decoration: underline;
+        }
+
+        .ourproducts {
+            display: flex;
+            flex-direction: column;
+            padding: 80px 100px;
+            gap: 50px;
+        }
+
+        .abt-products-text {
+            text-align: center;
+            color: #736860;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 30px;
+            row-gap: 70px;
+        }
+
+        .filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            color: #736860;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #d3cdc8;
+            padding: 0px 20px;
+        }
+
+        .moreaboutus {
+            position: relative;
+            background-image: url("./Images/bg-images/i1.jpg");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 120px;
+            gap: 120px;
+        }
+
+        .moreaboutus::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
+        }
+
+        .moreaboutus>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .uppersection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 660px;
+            gap: 25px;
+        }
+
+        .uppersection button {
+            color: #FFF;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 14px 28px;
+            background-color: transparent;
+            border: 1px solid#FFF;
+        }
+
+        .uppersection button:hover {
+            background-color: #BC8157;
+            transition: all 0.5s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .lowersection {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 30px 0px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .instagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .ig-right {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+            /* pushes images to the right side */
+            align-items: center;
+        }
+
+        .ig-right img {
+            width: 190px;
+            height: 200px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .ig-img-container {
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .ig-img-container img {
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .ig-img-container:hover img {
+            transform: scale(1.2);
+        }
+
+        .subscription {
+            background-image: url("./Images/bg-images/bg-i2.jpg");
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 100px;
+            color: white;
+        }
+
+        .subs-input {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+
+        .subs-input input {
+            padding: 20px 30px 20px 30px;
+            width: 500px;
+            border: none;
+            outline: none;
+        }
+
+        .subs-input input::placeholder {
+            font-size: 16px;
+            color: #000;
+        }
+
+        .subs-input button {
+            font-size: 22px;
+            color: #000;
+            font-family: "Montaga", serif;
+            background-color: #FFF;
+            padding: 14px 30px 15px 30px;
+            border: none;
+            outline: none;
+        }
+
+        .subs-input button:hover {
+            color: #BC8157;
+            cursor: pointer;
+        }
+
+        .footer {
+            margin: 20px 0;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footerleft {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .socials {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footerright {
+            display: flex;
+            gap: 200px;
+        }
+
+        .topic {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        @media screen and (min-width: 468px) and (max-width: 768px) {
+            .home {
+                background-position: top center;
+                min-height: 100svh;
+            }
+
+            nav {
+                padding: 30px 30px;
+            }
+
+            .nav-items {
+                gap: 10px;
+            }
+
+            .nav-icons {
+                gap: 10px;
+            }
+
+            .hero p {
+                font-size: 64px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .hot-section {
+                margin: 30px;
+                padding: 0px;
+            }
+
+            .hot-items img {
+                max-height: 150px;
+                max-width: 150px;
+            }
+
+            .hot-items h3 {
+                font-size: 16px;
+
+            }
+
+            .hot-items .sa {
+                font-size: 20px;
+            }
+
+            .hot-items .sb {
+                font-size: 30px;
+            }
+
+            .conact-us {
+                padding: 50px 30px;
+                gap: 50px;
+            }
+
+            .cu-lhs {
+                padding: 30px;
+                gap: 20px;
+                width: 70%;
+            }
+
+            .cu-rhs {
+                margin-right: 100px;
+            }
+
+            .partners {
+                padding: 50px 30px;
+            }
+
+            .partners img {
+                width: 100px;
+                height: auto;
+            }
+
+            .s01 {
+                position: absolute;
+                left: 85%;
+                top: 8%;
+            }
+
+            .s02 {
+                position: absolute;
+                left: 8%;
+                top: 45%;
+            }
+
+            .s03 {
+                position: absolute;
+                left: 8%;
+                top: 75%;
+                text-decoration: underline;
+            }
+
+            .ourproducts {
+                padding: 80px 50px;
+                gap: 40px;
+            }
+
+            .products {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 30px;
+                row-gap: 70px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .footerleft {
+                gap: 30px;
+            }
+
+        }
+
+        @media (max-width: 467px) {
+            .home {
+                background-position: top center;
+                min-height: 100svh;
+            }
+
+            .nav-items {
+                display: none;
+            }
+
+            .nav-icons {
+                display: none;
+            }
+
+            .hero p {
+                padding: 10px;
+                font-size: 32px;
+            }
+
+            .hero-btn {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            h2 {
+                font-size: 28px;
+                text-align: center;
+            }
+
+            p {
+                font-size: 12px;
+                width: 100%;
+            }
+
+            .hot-section {
+                grid-template-columns: repeat(1, 1fr);
+                margin: 30px 10px 50px 10px;
+                padding: 0px;
+            }
+
+            .hot-items img {
+                max-height: 200px;
+                max-width: 200px;
+            }
+
+            .hot-items h3 {
+                font-size: 16px;
+
+            }
+
+            .hot-items .sa {
+                font-size: 20px;
+            }
+
+            .hot-items .sb {
+                font-size: 30px;
+            }
+
+            .conact-us {
+                padding: 30px 10px;
+                flex-direction: column
+            }
+
+            .cu-lhs {
+                padding: 30px;
+                gap: 20px;
+                width: 70%;
+            }
+
+            .cu-lhs span {
+                font-size: 24px;
+            }
+
+            .cu-lhs li {
+                font-size: 12px;
+            }
+
+            .cu-rhs {
+                margin-right: 10px;
+            }
+
+            .partners {
+                display: none;
+            }
+
+            .categories {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .products {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                column-gap: 30px;
+                row-gap: 70px;
+            }
+
+            .uppersection {
+                align-items: center;
+                width: 100%;
+                padding: 10px 30px;
+                gap: 25px;
+            }
+
+            .filter {
+                display: none;
+            }
+
+            .lowersection {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .instagram {
+                flex-direction: column;
+            }
+
+            .ig-right {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+            }
+
+            .subs-input {
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .subs-input input::placeholder {
+                text-align: center;
+            }
+
+            .footer {
+                flex-direction: column;
+            }
+
+            .footerright {
+                flex-direction: column;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <nav>
+            <div class="logo">
+                <img src="./Images/bg-images/bakerfresh-logo-white.svg" alt="logoArea" />
+            </div>
+            <div class="nav-items">
+                <h1 style="font-size: 16px">Home</h1>
+                <h1 style="font-size: 16px">Shop</h1>
+                <h1 style="font-size: 16px">Pages</h1>
+                <h1 style="font-size: 16px">Contacts</h1>
+                <h1 style="font-size: 16px">Blog</h1>
+            </div>
+            <div class="nav-icons" style="color: #ffff">
+                <span class="material-symbols-outlined">search</span>
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <span class="material-symbols-outlined">account_circle</span>
+            </div>
+        </nav>
+        <div class="hero">
+            <img src="./Images/bg-images/heartshapecake.png" alt="" style="width: 95px; height: 104px" />
+            <p>
+                Bring The Best Experience
+            </p>
+            <button class="hero-btn">ORDER NOW</button>
+        </div>
+    </div>
+
+    <div class="text-abv-hot-section">
+        <h2>FOR A SWEET DAY</h2>
+        <p style="font-size: 24px; text-align: center; width: 450px">
+            "Bringing a touch of sweetness to your everyday, from our family to
+            yours"
+        </p>
+    </div>
+
+    <div class="hot-section">
+        <div class="hot-items">
+            <img src="./Images/hot-items/hot-item1.jpg" alt="" />
+            <h3>Italian Loaf</h3>
+            <span class="sa">4.99</span>
+            <span class="sb">&#8594;</span>
+        </div>
+
+        <div class="hot-items">
+            <img src="./Images/hot-items/hot-item2.jpg" alt="" />
+            <h3>Croissant Italy Cake</h3>
+            <span class="sa">$7.99</span>
+            <span class="sb">&#8594;</span>
+        </div>
+
+        <div class="hot-items">
+            <img src="./Images/hot-items/hot-item3.jpg" alt="" />
+            <h3>Chocolate Muffin</h3>
+            <span class="sa">8.99</span>
+            <span class="sb">&#8594;</span>
+        </div>
+    </div>
+
+    <div class="conact-us">
+        <div class="cu-lhs">
+            <span>COME WITH US</span>
+            <li style="font-size: 16px">
+                Come with us into a world of fresh bakes, warm ovens, and handcrafted
+                goodness made from simple, honest ingredients every single day.
+            </li>
+            <li>
+                Be part of our journey as we share our passion for baking from
+                early-morning preparations to the sweet moments enjoyed with every
+                bite.
+            </li>
+        </div>
+        <div class="cu-rhs"></div>
+    </div>
+
+    <div class="partners">
+        <img src="./Images/partners/partner-1.png" alt="partner1" />
+        <img src="./Images/partners/partner-2.png" alt="partner2" />
+        <img src="./Images/partners/partner-3.png" alt="partner3" />
+        <img src="./Images/partners/partner-4.png" alt="partner4" />
+        <img src="./Images/partners/partner-5.png" alt="partner5" />
+    </div>
+
+    <div class="categories">
+        <div class="image-container">
+            <img src="./Images/categories/c1.jpg" alt="Cupcake" />
+            <span class="s01" style="font-size: 32px; color: #ffff">01.</span>
+            <span class="s02" style="font-size: 46px; color: #ffff">Cupcake</span>
+            <span class="s03" style="font-size: 20px; color: #ffff">Shop Now</span>
+        </div>
+
+        <div class="image-container">
+            <img src="./Images/categories/c2.jpg" alt="Pastry" />
+            <span class="s01" style="font-size: 32px; color: #ffff">02.</span>
+            <span class="s02" style="font-size: 46px; color: #ffff">Pastry</span>
+            <span class="s03" style="font-size: 20px; color: #ffff">Shop Now</span>
+        </div>
+
+        <div class="image-container">
+            <img src="./Images/categories/c3.jpg" alt="Muffin" />
+            <span class="s01" style="font-size: 32px; color: #ffff">03.</span>
+            <span class="s02" style="font-size: 46px; color: #ffff">Muffin</span>
+            <span class="s03" style="font-size: 20px; color: #ffff">Shop Now</span>
+        </div>
+
+        <div class="image-container">
+            <img src="./Images/categories/c4.jpg" alt="Waffle" />
+            <span class="s01" style="font-size: 32px; color: #ffff">04.</span>
+            <span class="s02" style="font-size: 46px; color: #ffff">Waffle</span>
+            <span class="s03" style="font-size: 20px; color: #ffff">Shop Now</span>
+        </div>
+    </div>
+
+    <div class="ourproducts">
+        <div class="aboutproducts">
+            <h2 style="text-align:center;">OUR PRODUCTS</h2>
+        </div>
+
+        <div class="abt-products-text">
+            Freshly baked cakes, pastries, and breads made daily with quality
+            ingredients. Simple, delicious, and made to be enjoyed.
+        </div>
+
+        <div class="filter">
+            <span> All</span><span> |</span> <span>Cupcake</span> <span> |</span> <span> Pastry</span> <span> |</span>
+            <span>Muffin </span> <span> |</span> <span>Waffle </span> <span> |</span> <span>Tart </span>
+        </div>
+        <div class="products">
+            <div class="product">
+                <img src="./Images/products/p1.png" alt="" />
+                <span class="sa">Brownie</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p2.png" alt="" />
+                <span class="sa">Red Velvet</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p3.png" alt="" />
+                <span class="sa">Cream Muffin</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p4.png" alt="" />
+                <span class="sa">Macaron Cake</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p5.png" alt="" />
+                <span class="sa">No-bake chocolate</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p6.png" alt="" />
+                <span class="sa">Chocolate Bake</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p7.png" alt="" />
+                <span class="sa">Chocolate Muffin</span>
+                <span class="sb">$4.99</span>
+            </div>
+
+            <div class="product">
+                <img src="./Images/products/p8.png" alt="" />
+                <span class="sa">Signature Cake</span>
+                <span class="sb">$4.99</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="moreaboutus">
+        <div class="uppersection">
+            <p style="font-size: 28px; color: #BC8157">Bakerfresh</p>
+            <h2 style="color:#FFF;">THE MOST AMAZING CAKES</h2>
+            <P style="color: #FFF;text-align: center; font-family:Inter, -apple-system">Aliqua id fugiat nostrud irure
+                ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor
+                enim</P>
+            <button>SHOP NOW</button>
+        </div>
+
+        <div class="lowersection">
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span class="material-symbols-outlined" style="color:#BC8157;">mobile</span>
+                <span style="font-size: 22px;
+                color: #FFF;">
+                    Contact Us</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span class="material-symbols-outlined" style="color:#BC8157;">shopping_bag</span>
+                <span style="font-size: 22px;
+                color: #FFF;">Shopping Online</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <span class="material-symbols-outlined" style="color:#BC8157;">location_on</span>
+                <span style="font-size: 22px;
+                color: #FFF;">Store Location</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="instagram">
+        <div class="ig-left">
+            <h2 style="font-size: 30px; font-weight: 400;">INSTAGRAM</h2>
+            <p style="color: #858585; font-size: 19px;">@BakerFreshCakeShop</p>
+        </div>
+        <div class="ig-right">
+            <div class="ig-img-container">
+                <img src="./Images/instagram/ig1.jpg" alt="">
+            </div>
+
+            <div class="ig-img-container">
+                <img src="./Images/instagram/ig2.jpg" alt="">
+            </div>
+
+            <div class="ig-img-container">
+                <img src="./Images/instagram/ig3.jpg" alt="">
+            </div>
+
+            <div class="ig-img-container">
+                <img src="./Images/instagram/ig4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="subscription">
+        <p style="font-size: 30px;">STAY IN TOUCH & GET THE 10% OFF</p>
+        <div class="subs-input">
+            <input type="email" placeholder="Your email address" autocomplete="on" required>
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footerleft">
+            <img src="./Images/bg-images/logo-black.svg" alt="">
+            <div class="socials">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+
+        <div class="footerright">
+            <div class="topic">
+                <p style="font-size: 20px; font-weight: 500;">CATAGORIES</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Cupcake</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Pastry</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Muffin</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Waffle</p>
+            </div>
+
+            <div class="topic">
+                <p style="font-size: 20px; font-weight: 500;">SERVICES</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Delivery</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Payment</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Return</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Privacy</p>
+            </div>
+
+            <div class="topic">
+                <p style="font-size: 20px; font-weight: 500;">INFORMATION</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Avout Us</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Contact Us</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Latest Post</p>
+                <p style="font-size: 14px; font-weight: 300; color:#454545;">Selling Tips</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+</body>
+
+</html>
